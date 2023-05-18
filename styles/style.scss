@@ -1,0 +1,205 @@
+@import "reset";
+@import "globals";
+@import "function";
+
+body {
+  @include grid-centering;
+  background: #e0e8ff;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  background-image: url(/images/pattern-background-desktop.svg);
+  background-repeat: no-repeat;
+  background-position: 0 -20px;
+  background-size: cover;
+  width: 100%;
+  height: rem(437);
+  z-index: -9999;
+}
+
+.card {
+  width: rem(450);
+  border-radius: rem(20);
+  overflow: hidden;
+  background-color: $white;
+
+  &__img {
+    width: rem(450);
+    height: rem(220);
+  }
+
+  &__txt {
+    text-align: center;
+    padding: rem(45) rem(48) rem(20);
+
+    &-heading {
+      font-size: rem(28);
+      font-weight: $fw-heading;
+      line-height: 1.32;
+      color: $darkBlue;
+      margin-bottom: rem(17);
+    }
+
+    &-para {
+      font-weight: $fw-body;
+      line-height: 1.62;
+      color: $grayBlue;
+    }
+  }
+
+  &__plan {
+    margin: rem(0) rem(48) rem(32);
+    background-color: #f7f9ff;
+    border-radius: rem(11);
+
+    &-box {
+      @include flex;
+      padding: rem(25) rem(24);
+
+      &-detail {
+        @include flex;
+        gap: rem(20);
+
+        & img {
+          width: rem(48);
+          height: rem(48);
+        }
+
+        &-txt {
+          line-height: 1.3125;
+
+          &__heading {
+            font-weight: $fw-heading;
+            color: $darkBlue;
+            margin-bottom: rem(6);
+          }
+
+          &__para {
+            font-weight: $fw-body;
+            color: $grayBlue;
+          }
+        }
+      }
+
+      &--change {
+        font-size: rem(14);
+        line-height: 1.357;
+        font-weight: 700;
+        color: $blue;
+        text-decoration: underline;
+
+        &:hover {
+          color: $hoverBlue;
+        }
+      }
+    }
+  }
+
+  &__payment {
+    @include flex;
+    flex-direction: column;
+    gap: rem(32);
+    margin-bottom: rem(48);
+
+    &-btn {
+      border: none;
+      color: $white;
+      font-size: rem(15);
+      line-height: 1.33;
+      font-weight: $fw-heading;
+      cursor: pointer;
+
+      &--cart {
+        border-radius: rem(11);
+        background-color: $blue;
+        padding: rem(15) rem(102);
+        box-shadow: $shadowBTN;
+
+        &:hover {
+          background-color: $hoverBlue;
+        }
+      }
+
+      &--cancel {
+        background-color: transparent;
+        color: $grayBlue;
+
+        &:hover {
+          color: $darkBlue;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: "";
+    position: absolute;
+    background-image: url(/images/pattern-background-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: contain;
+    width: 100%;
+    height: rem(194);
+    z-index: -9999;
+  }
+
+  .card {
+    width: rem(327);
+
+    &__img {
+      width: rem(327);
+      height: rem(160);
+    }
+
+    &__txt {
+      padding: rem(32) rem(32) rem(24);
+
+      &-heading {
+        font-size: rem(22);
+      }
+
+      &-para {
+        font-size: rem(15);
+      }
+    }
+
+    &__plan {
+      margin: rem(0) rem(24) rem(24);
+
+      &-box {
+        padding: rem(16);
+
+        &-detail-txt__heading {
+          font-size: rem(14);
+          margin-bottom: rem(3);
+        }
+
+        &-detail-txt__para {
+          font-size: rem(14);
+        }
+
+        &--change {
+          font-size: rem(13);
+        }
+      }
+    }
+
+    &__payment {
+      gap: rem(24);
+      margin-bottom: rem(32);
+
+      &-btn--cart {
+        padding: rem(15) rem(64);
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+//fonts
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
+$fw-heading: 900;
+$fw-body: 500;
+//colors
+$darkBlue: #1f2e55;
+$grayBlue: #717fa6;
+$white: #fff;
+$blue: #382ae1;
+$hoverBlue: #766CF1;
+$shadowBTN: 0px 20px 20px rgba(56, 42, 225, 0.19);
+$shadowCard: 0px 40px 40px -20px rgba(13, 48, 189, 0.15);
+//flex-container
+@mixin flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+//grid-centering
+@mixin grid-centering {
+  display: grid;
+  place-content: center;
+}
