@@ -146,9 +146,7 @@ body::before {
     background-image: url(/images/pattern-background-mobile.svg);
     background-repeat: no-repeat;
     background-position: 0 0;
-    background-size: contain;
-    width: 100%;
-    height: rem(194);
+    background-size: 100vw 100%;
     z-index: -9999;
   }
 
